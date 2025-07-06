@@ -4,3 +4,182 @@
 *:after {
   box-sizing: border-box;
 }
+
+/* styles.css */
+
+/* Mobile-first styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(../images/site/checkerboard.jpg);
+  color: #000;
+}
+.wrapper{
+  width: 85%;
+ margin: 0 auto;
+ background-color: white;
+}
+
+header {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-top: 1rem;
+  background-color: #1d1b2f;
+}
+
+.nav li {
+  flex: 1;
+  text-align: center;
+}
+
+.nav a {
+  display: block;
+  padding: 0.75rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem;
+}
+
+h2, h3 {
+  margin-top: 1rem;
+  color: #111;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:left;
+  font-size: large;
+  
+}
+.text{
+  background-color: rgba(231, 228, 228, 0.2);
+  list-style: none;
+   color: #00a3cc;
+  position: absolute;
+   font-size: 1.5rem;
+}
+.text ul> li{
+  list-style: none;
+ 
+}
+.highlight-title {
+  color: #00a3cc;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #0099cc;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.car-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.reviews ul {
+  padding-left: 1rem;
+}
+
+.upgrades .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  
+  margin-top: 1rem;
+}
+
+.card {
+  text-align: center;
+  background: #00ccee;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2rem;
+}
+
+/* Larger screens */
+@media screen and (min-width: 768px) {
+  .highlight {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+   
+  }
+
+  .highlight .text {
+    flex: 1;
+    padding-right: 1rem;
+  }
+ 
+  .car-image img {
+    max-width: 400px;
+  }
+
+  .upgrades .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav li {
+    flex: unset;
+    margin: 0 1rem;
+  }
+  
+}
+
+@media screen and (min-width: 1000px) {
+  .rev_up{
+  display: flex;
+}
+
+.car-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 2rem;
+}
+}
