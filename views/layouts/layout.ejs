@@ -1,33 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <meta name="description" content="CSE Motors - DMC Delorean for sale" >
-  <meta name="author" content="Barisitom Akpee" >
-  <title>CSE Motors</title>
-  <link rel="stylesheet" href="./css/styles.css" media="screen" >
-</head>
+  <%- include('../partials/head.ejs')  %>
 
 <body>
 <div class="wrapper">
-  <header>
-    <div class="top-bar">
-      <h1>CSE Motors</h1>
-      <a href="#" class="account">My Account</a>
-    </div>
-    <nav>
-      <ul class="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Custom</a></li>
-        <li><a href="#">Sedan</a></li>
-        <li><a href="#">SUV</a></li>
-        <li><a href="#">Truck</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  <%- include('../partials/header.ejs')  %>
   <main>
     <h2>Welcome to CSE Motors!</h2>
     <section class="highlight">
@@ -69,7 +46,7 @@
         </figure>
 
         <figure class="card">
-          <img src="/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers" loading="lazy">
+          <img src="/images/views/index.ejsupgrades/bumper_sticker.jpg" alt="Bumper Stickers" loading="lazy">
             <figcaption>  <a href="#">Bumper Stickers</a></figcaption>
         </figure>
         <figure class="card">
@@ -81,9 +58,7 @@
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025, CSE 340 App EJS</p>
-  </footer>
+  <%- include('../partials/footer.ejs')  %>
 </div>
 </body>
 

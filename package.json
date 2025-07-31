@@ -1,26 +1,23 @@
 {
-  "name": "cse340",
-  "version": "1.0.0",
-  "description": "Starter project for CSE 340",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "author": "Barisitom Akpee",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3",
+    "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
-    "express": "^4.18.2",
+    "express": "^5.1.0",
     "express-ejs-layouts": "^2.5.1",
-    "pg": "^8.8.0"
+    "pg": "^8.16.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.10"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/cse340.git"
-  }
+  "name": "cse340-wk3",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
