@@ -18,32 +18,32 @@ app.use("/", staticRoutes)
 app.get("/", utilities.handleErrors ? utilities.handleErrors(baseController.buildHome) : baseController.buildHome)
 app.use("/inv", inventoryRoute)
 
+
 app.get("/", (req, res) => {
-  res.render('index')
+  res.render('index', {title: 'HOME'})
 })
 
-app.get("/index", (req, res) => {
-  res.render('index')
+app.get("/custom", (req, res) => {
+  res.render('layouts/truck', {title: 'CUSTOM', layout: 'layouts/truck.ejs'})
 })
 
-app.get("layouts/custom", (req, res) => {
-  res.render('custom')
-})
+app.get("/sedan", (req, res) => {
+  res.render('layouts/sedan', {layout: "layouts/sedan",  title: "SEDAN" });
+});
 
-app.get("layouts/sedan", (req, res) => {
-  res.render('sedan')
-})
+app.get("/sport", (req, res) => {
+  res.render("layouts/sport", {layout: "layouts/sport", title: "SPORT" });
+});
 
-app.get("layouts/sport", (req, res) => {
-  res.render('sport')
-})
 
-app.get("layouts/suv", (req, res) => {
-  res.render('suv')
-})
-app.get("layouts/truck", (req, res) => {
-  res.render('truck')
-})
+app.get("/suv", (req, res) => {
+  res.render("layouts/suv", {layout: "layouts/suv", title: "SUV" });
+});
+
+app.get("/truck", (req, res) => {
+  res.render("layouts/truck", { layout: "layouts/truck", title: "Truck" });
+});
+
 
 app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." })
