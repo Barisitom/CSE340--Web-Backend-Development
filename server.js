@@ -7,6 +7,8 @@ const utilities = require("./utilities")
 const inventoryRoute = require("./routes/inventoryRoute")
 const staticRoutes = require("./routes/static")
 
+
+
 const app = express()
 
 app.set("view engine", "ejs")
@@ -15,7 +17,7 @@ app.set("layout", "./layouts/layout")
 app.use(express.static("public"))
 
 app.use("/", staticRoutes)
-app.get("/", utilities.handleErrors ? utilities.handleErrors(baseController.buildHome) : baseController.buildHome)
+//app.get("/", utilities.handleErrors ? utilities.handleErrors(baseController.buildHome) : baseController.buildHome)
 app.use("/inv", inventoryRoute)
 
 
@@ -44,11 +46,33 @@ app.get("/truck", (req, res) => {
   res.render("layouts/truck", { layout: "layouts/truck", title: "Truck" });
 });
 
+app.get("/inv", (req, res) => {
+  res.render("layouts/page", { layout: "layouts/page", title: "VM" });
+});
+
+app.get("/inv/add-classification", (req, res) => {
+  res.render("layouts/class", { layout: "layouts/class", title: "ADD" });
+});
+
+
+app.get("/classification/add", (req, res) => {
+  res.render("layouts/layout", { layout: "layouts/layout", title: "ADD", errors: [] });
+})
 
 app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." })
 })
 
+// app.use(async (err, req, res, next) => {
+//   let nav = await utilities.getNav()
+//   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+//   let message = err.status == 404 ? err.message : "Oh no! There was a crash. Maybe try a different route?"
+//   res.status(err.status || 500).render("errors/error", {
+//     title: err.status || "Server Error",
+//     message,
+//     nav,
+//   })
+// })
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
@@ -57,9 +81,9 @@ app.use(async (err, req, res, next) => {
     title: err.status || "Server Error",
     message,
     nav,
+    errors: err.errors || [] // Pass errors array if available
   })
 })
-
 const port = process.env.PORT || 5500
 const host = process.env.HOST || "localhost"
 app.listen(port, () => {

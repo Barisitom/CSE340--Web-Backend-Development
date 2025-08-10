@@ -240,6 +240,10 @@ dialog {
   font-size: 1rem;
 }
 
+.notice{
+  background-color: #00ccee;
+}
+
 @media screen and (min-width: 600px) {
   .dialog-content {
     flex-direction: row;

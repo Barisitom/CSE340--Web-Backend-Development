@@ -5,3 +5,24 @@
   res.redirect('/')
 } %>
 <%- nav %>
+
+
+
+<% if (title) {%>
+<h1><%= title %> </h1>
+<%} else { res.redirect('/')} %>
+
+
+
+<% if (title) {%>
+<ul class="notice">
+  <% errors.forEach(error => {%>
+  <li><%= error.msg %></li>
+<%}) %>
+</ul>
+<%} %>
+
+<div id="registerContainer">
+  <p>All fields are required.</p>
+  <form id="registerForm" action="/account/register"
+  method="post"></form>
