@@ -1,0 +1,59 @@
+
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form-container {
+  background-color: #19a2d8;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.small-note {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+form fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.instruction {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}

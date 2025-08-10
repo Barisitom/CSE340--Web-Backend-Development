@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/register.css" media="screen"/>
+</head>
+<body>
+
+  <h1>Register</h1>
+
+  <div class="register-box">
+    <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+  <ul class="errors">
+    <% errors.forEach(function(error) { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<form>
+      <p class="required">All fields are required.</p>
+
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" required>
+
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <p class="note">
+        Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.
+      </p>
+
+      <button type="button" id="togglePassword">Show Password</button>
+
+      <br>
+      <button type="submit" class="register-btn">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+
+    toggle.addEventListener('click', function () {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.textContent = type === 'text' ? 'Hide Password' : 'Show Password';
+    });
+  </script>
+
+</div>
+</body>
+</html>
+

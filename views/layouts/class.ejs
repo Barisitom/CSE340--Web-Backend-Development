@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add New Classification</title>
+  <link rel="stylesheet" href="/css/class.css" />
+</head>
+<body>
+  <h1>Add New Classification</h1>
+  <div class="form-container">
+    <p class="small-note"><em>Field is required.</em></p>
+    <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+  <ul class="errors">
+    <% errors.forEach(function(error) { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<form action="/classification/add" method="post">
+      <fieldset>
+        <label for="classification_name">Classification Name</label>
+        <p class="instruction"><em>Name must be alphabetic characters only.</em></p>
+        <input type="text" id="classification_name" name="classification_name" required pattern="[A-Za-z\s]+" />
+        <button type="submit">Add Classification</button>
+      </fieldset>
+    </form>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>
